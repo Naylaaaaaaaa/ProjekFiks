@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>SportMart</title>
+      <title>Skincare</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -40,7 +40,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <div class="footer_logo"><img src="storage/images/logo1.png" width="250" height="auto"></div>
+                  <div class="footer_logo"><img src="logo1.png" width="250" height="auto"></div>
                </div>
             </div>
             <div class="footer_section_2">

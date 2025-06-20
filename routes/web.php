@@ -51,11 +51,11 @@ Route::middleware('auth', 'admin')->group(function () {
     Route::get('/users/{id}/edit', [AdminController::class, 'edituser'])->name('admin.edituser');
     Route::post('/users/{id}', [AdminController::class, 'updateuser'])->name('admin.updateuser');
     Route::delete('/users/{id}', [AdminController::class, 'deleteuser'])->name('admin.deleteuser');
-
+    
     Route::get('/lihatkategori', [AdminController::class, 'lihatkategori'])->name('admin.lihatkategori');
     Route::get('/lihatproduk', [AdminController::class, 'lihatproduk'])->name('admin.lihatproduk');
-    Route::get('/lihatulasan', [AdminController::class, 'lihatulasan'])->name('admin.lihatulasan');
-    Route::get('/lihattransaksi', [AdminController::class, 'lihattransaksi'])->name('admin.lihattransaksi');
+    // Route::get('/lihatulasan', [AdminController::class, 'lihatulasan'])->name('admin.lihatulasan');
+    // Route::get('/lihattransaksi', [AdminController::class, 'lihattransaksi'])->name('admin.lihattransaksi');
     Route::get('/lihatprofile', [AdminController::class, 'lihatprofile'])->name('admin.lihatprofile');
 });
 

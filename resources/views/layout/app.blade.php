@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>SB Admin 2 - Dashboard</title>
+    <title>SB Admin - Dashboard</title>
 
     <!-- Font & Styles -->
     <link href="{{ asset('sb-Admin/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
@@ -23,7 +23,7 @@
         <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div>
-        <div class="sidebar-brand-text mx-3">SportMart</div>
+        <div class="sidebar-brand-text mx-3">Skincare</div>
     </a>
 
     <!-- Divider -->
@@ -71,7 +71,7 @@
             <span>Produk</span>
         </a>
     </li>
-    <li class="nav-item">
+    {{-- <li class="nav-item">
         <a class="nav-link" href="{{ route('admin.lihatulasan') }}">
             <i class="fas fa-star"></i>
             <span>Ulasan</span>
@@ -82,7 +82,7 @@
             <i class="fas fa-receipt"></i>
             <span>Transaksi</span>
         </a>
-    </li>
+    </li> --}}
 
 
    <li class="nav-item">
@@ -155,7 +155,7 @@
             <footer class="sticky-footer bg-white">
                 <div class="container my-auto">
                     <div class="copyright text-center">
-                        <span>&copy; SportMart 2025</span>
+                        <span>&copy; Skincare Nayla</span>
                     </div>
                 </div>
             </footer>

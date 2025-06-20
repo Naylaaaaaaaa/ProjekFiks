@@ -18,7 +18,7 @@
               <tr>
                 <th>Pembeli</th>
                 <th>Nama Produk</th>
-                <th>Rating</th>\
+                <th>Rating</th>
                 <th>Komen</th>
               </tr>
             </thead>

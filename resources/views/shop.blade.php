@@ -4,7 +4,7 @@
          <div class="container">
             <div class="row">
                <div class="col-md-12">
-                  <h1 class="blog_taital">Peralatan Olahraga</h1>
+                  <h1 class="blog_taital">Skincare</h1>
                </div>
             </div>
             <div class="blog_section_2">
