@@ -1,65 +1,143 @@
-# [Start Bootstrap - SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/)
+# Sistem Manajemen Penjualan dan Order Produk
 
-[SB Admin 2](https://startbootstrap.com/theme/sb-admin-2/) is an open source admin dashboard theme for [Bootstrap](https://getbootstrap.com/) created by [Start Bootstrap](https://startbootstrap.com/).
+**Mutmainnah Talib**  
+**D0223008**  
 
-For the legacy Bootstrap 3 version of this theme, you can view the [last stable release](https://github.com/StartBootstrap/startbootstrap-sb-admin-2/releases/tag/v3.3.7%2B1) of SB Admin 2 for Bootstrap 3.
+_Mata Kuliah Framework Web Based_  
+_Tahun 2025_
 
-## Preview
+---
 
-[![SB Admin 2 Preview](https://assets.startbootstrap.com/img/screenshots/themes/sb-admin-2.png)](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)
+## Deskripsi
 
-**[Launch Live Preview](https://startbootstrap.github.io/startbootstrap-sb-admin-2/)**
+**Sistem Manajemen Penjualan dan Order Produk** adalah aplikasi berbasis web yang dirancang untuk membantu pengelolaan penjualan produk dan pemrosesan order secara efisien.  
+Sistem ini mendukung tiga jenis role pengguna:
 
-## Status
+1. **Admin**  
+   Pengelola utama aplikasi yang memiliki akses penuh untuk mengatur pengguna, produk, pesanan, kategori, serta melihat laporan transaksi.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/StartBootstrap/startbootstrap-sb-admin-2/master/LICENSE)
-[![npm version](https://img.shields.io/npm/v/startbootstrap-sb-admin-2.svg)](https://www.npmjs.com/package/startbootstrap-sb-admin-2)
-[![Build Status](https://travis-ci.org/StartBootstrap/startbootstrap-sb-admin-2.svg?branch=master)](https://travis-ci.org/StartBootstrap/startbootstrap-sb-admin-2)
-[![dependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2/status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2)
-[![devDependencies Status](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2/dev-status.svg)](https://david-dm.org/StartBootstrap/startbootstrap-sb-admin-2?type=dev)
+2. **Penjual**  
+   Pengguna yang dapat menambahkan produk, mengelola stok, melihat pesanan masuk, mengatur status pesanan, serta memantau ulasan dari pembeli.
 
-## Download and Installation
+3. **Pembeli**  
+   Pengguna yang dapat melihat produk, melakukan pemesanan, memberikan ulasan, serta melacak status pesanan mereka.
 
-To begin using this template, choose one of the following options to get started:
+---
 
-* [Download the latest release on Start Bootstrap](https://startbootstrap.com/theme/sb-admin-2/)
-* Install via npm: `npm i startbootstrap-sb-admin-2`
-* Clone the repo: `git clone https://github.com/StartBootstrap/startbootstrap-sb-admin-2.git`
-* [Fork, Clone, or Download on GitHub](https://github.com/StartBootstrap/startbootstrap-sb-admin-2)
+## Fitur Utama
 
-## Usage
+1. **Autentikasi Pengguna**  
+   Pendaftaran, login, pengelolaan profil (Admin, Penjual, atau Pembeli).
 
-After installation, run `npm install` and then run `npm start` which will open up a preview of the template in your default browser, watch for changes to core template files, and live reload the browser when changes are saved. You can view the `gulpfile.js` to see which tasks are included with the dev environment.
+2. **Pengelolaan Produk**  
+   Tambah, edit, hapus produk, kelola stok dan harga.
 
-### Gulp Tasks
+3. **Pemesanan dan Pembelian Produk**  
+   Keranjang, checkout, pemantauan status pesanan.
 
-* `gulp` the default task that builds everything
-* `gulp watch` browserSync opens the project in your default browser and live reloads when changes are made
-* `gulp css` compiles SCSS files into CSS and minifies the compiled CSS
-* `gulp js` minifies the themes JS file
-* `gulp vendor` copies dependencies from node_modules to the vendor directory
+4. **Pengelolaan Order**  
+   Admin & Penjual dapat memproses dan update status pengiriman.
 
-You must have npm installed globally in order to use this build environment. This theme was built using node v11.6.0 and the Gulp CLI v2.0.1. If Gulp is not running properly after running `npm install`, you may need to update node and/or the Gulp CLI locally.
+5. **Manajemen Role Akses**  
+   Hak akses dan tampilan berdasarkan peran.
 
-## Bugs and Issues
+6. **Pencarian Produk**  
+   Cari produk berdasarkan nama/kategori.
 
-Have a bug or an issue with this template? [Open a new issue](https://github.com/StartBootstrap/startbootstrap-sb-admin-2/issues) here on GitHub or leave a comment on the [template overview page at Start Bootstrap](https://startbootstrap.com/theme/sb-admin-2/).
+7. **Laporan Penjualan**  
+   Riwayat transaksi, pendapatan, status pesanan.
 
-## About
+---
 
-Start Bootstrap is an open source library of free Bootstrap templates and themes. All of the free templates and themes on Start Bootstrap are released under the MIT license, which means you can use them for any purpose, even for commercial projects.
+## Tabel Database
 
-* <https://startbootstrap.com>
-* <https://twitter.com/SBootstrap>
+### A. Tabel User (Pengguna)
 
-Start Bootstrap was created by and is maintained by **[David Miller](https://davidmiller.io/)**.
+| Field              | Tipe Data          | Keterangan                             |
+|--------------------|--------------------|----------------------------------------|
+| id                 | BIGINT (PK)        | Primary key (auto increment)           |
+| name               | VARCHAR            | Nama lengkap pengguna                  |
+| email              | VARCHAR            | Email unik pengguna (digunakan untuk login) |
+| password           | VARCHAR            | Password terenkripsi (bcrypt)          |
+| role               | ENUM               | 'admin', 'penjual', 'pembeli'          |
+| phone_number       | VARCHAR            | Nomor HP pengguna                      |
+| address            | TEXT               | Alamat pengguna                        |
+| email_verified_at  | TIMESTAMP          | Tanggal verifikasi email (nullable)    |
+| remember_token     | VARCHAR            | Token untuk “remember me”              |
+| created_at         | TIMESTAMP          | Otomatis diisi Laravel                 |
+| updated_at         | TIMESTAMP          | Otomatis diisi Laravel                 |
 
-* <https://davidmiller.io>
-* <https://twitter.com/davidmillerhere>
-* <https://github.com/davidtmiller>
+---
 
-Start Bootstrap is based on the [Bootstrap](https://getbootstrap.com/) framework created by [Mark Otto](https://twitter.com/mdo) and [Jacob Thorton](https://twitter.com/fat).
+### B. Tabel Products (Produk)
 
-## Copyright and License
+| Field         | Tipe Data          | Deskripsi                              |
+|---------------|--------------------|----------------------------------------|
+| id            | INT AUTO_INCREMENT | ID unik produk                         |
+| name          | VARCHAR(255)       | Nama produk                            |
+| description   | TEXT               | Deskripsi produk                       |
+| price         | DECIMAL(10,2)      | Harga produk                           |
+| stock         | INT                | Jumlah stok produk                     |
+| category_id   | INT                | FK ke categories.id                    |
+| image         | VARCHAR(255)       | Path gambar produk                     |
+| created_at    | TIMESTAMP          | Waktu produk ditambahkan               |
+| updated_at    | TIMESTAMP          | Waktu data diperbarui                  |
 
-Copyright 2013-2021 Start Bootstrap LLC. Code released under the [MIT](https://github.com/StartBootstrap/startbootstrap-resume/blob/master/LICENSE) license.
+---
+
+### C. Tabel Orders (Pesanan)
+
+| Field             | Tipe Data          | Deskripsi                              |
+|-------------------|--------------------|----------------------------------------|
+| id                | INT AUTO_INCREMENT | ID unik pesanan                        |
+| customer_id       | INT (FK ke users.id) | ID pembeli                             |
+| order_date        | TIMESTAMP          | Tanggal dan waktu pemesanan            |
+| status            | ENUM('pending','processed','shipped','completed','cancelled') | Status pemesanan |
+| total_price       | DECIMAL(10,2)      | Total harga seluruh item               |
+| shipping_address  | TEXT               | Alamat pengiriman                      |
+| created_at        | TIMESTAMP          | Waktu data dibuat                      |
+| updated_at        | TIMESTAMP          | Waktu data diperbarui                  |
+
+---
+
+### D. Tabel Order_Items (Detail Item Dalam Pesanan)
+
+| Field         | Tipe Data          | Deskripsi                              |
+|---------------|--------------------|----------------------------------------|
+| id            | INT AUTO_INCREMENT | ID unik item pesanan                   |
+| order_id      | INT (FK ke orders.id) | ID pesanan terkait                    |
+| product_id    | INT (FK ke products.id) | ID produk yang dipesan                |
+| quantity      | INT                | Jumlah item dipesan                    |
+| unit_price    | DECIMAL(10,2)      | Harga satuan saat pemesanan            |
+| subtotal      | DECIMAL(10,2)      | Total = quantity × unit_price          |
+
+---
+
+## Relasi Antar Tabel
+
+1. **users → orders**  
+   _One-to-Many._  
+   Seorang pembeli (role 'pembeli') dapat membuat banyak order.
+
+2. **orders → order_items**  
+   _One-to-Many._  
+   Setiap order memiliki banyak order_items.
+
+3. **products → order_items**  
+   _One-to-Many._  
+   Setiap produk bisa muncul di banyak order_items.
+
+4. **products → categories**  
+   _Many-to-One._  
+   Setiap produk memiliki satu kategori.
+
+5. **users → logs**  
+   _One-to-Many._  
+   Setiap user (admin, penjual, pembeli) dapat memiliki banyak log aktivitas.
+
+6. **orders → payments**  
+   _One-to-One._  
+   Setiap order memiliki satu pembayaran.
+
+---
+
