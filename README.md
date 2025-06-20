@@ -1,66 +1,143 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Sistem Manajemen Penjualan dan Order Produk
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**Mutmainnah Talib**  
+**D0223008**  
 
-## About Laravel
+_Mata Kuliah Framework Web Based_  
+_Tahun 2025_
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Deskripsi
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**Sistem Manajemen Penjualan dan Order Produk** adalah aplikasi berbasis web yang dirancang untuk membantu pengelolaan penjualan produk dan pemrosesan order secara efisien.  
+Sistem ini mendukung tiga jenis role pengguna:
 
-## Learning Laravel
+1. **Admin**  
+   Pengelola utama aplikasi yang memiliki akses penuh untuk mengatur pengguna, produk, pesanan, kategori, serta melihat laporan transaksi.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **Penjual**  
+   Pengguna yang dapat menambahkan produk, mengelola stok, melihat pesanan masuk, mengatur status pesanan, serta memantau ulasan dari pembeli.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+3. **Pembeli**  
+   Pengguna yang dapat melihat produk, melakukan pemesanan, memberikan ulasan, serta melacak status pesanan mereka.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Fitur Utama
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. **Autentikasi Pengguna**  
+   Pendaftaran, login, pengelolaan profil (Admin, Penjual, atau Pembeli).
 
-### Premium Partners
+2. **Pengelolaan Produk**  
+   Tambah, edit, hapus produk, kelola stok dan harga.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. **Pemesanan dan Pembelian Produk**  
+   Keranjang, checkout, pemantauan status pesanan.
 
-## Contributing
+4. **Pengelolaan Order**  
+   Admin & Penjual dapat memproses dan update status pengiriman.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. **Manajemen Role Akses**  
+   Hak akses dan tampilan berdasarkan peran.
 
-## Code of Conduct
+6. **Pencarian Produk**  
+   Cari produk berdasarkan nama/kategori.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+7. **Laporan Penjualan**  
+   Riwayat transaksi, pendapatan, status pesanan.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Tabel Database
 
-## License
+### A. Tabel User (Pengguna)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+| Field              | Tipe Data          | Keterangan                             |
+|--------------------|--------------------|----------------------------------------|
+| id                 | BIGINT (PK)        | Primary key (auto increment)           |
+| name               | VARCHAR            | Nama lengkap pengguna                  |
+| email              | VARCHAR            | Email unik pengguna (digunakan untuk login) |
+| password           | VARCHAR            | Password terenkripsi (bcrypt)          |
+| role               | ENUM               | 'admin', 'penjual', 'pembeli'          |
+| phone_number       | VARCHAR            | Nomor HP pengguna                      |
+| address            | TEXT               | Alamat pengguna                        |
+| email_verified_at  | TIMESTAMP          | Tanggal verifikasi email (nullable)    |
+| remember_token     | VARCHAR            | Token untuk “remember me”              |
+| created_at         | TIMESTAMP          | Otomatis diisi Laravel                 |
+| updated_at         | TIMESTAMP          | Otomatis diisi Laravel                 |
+
+---
+
+### B. Tabel Products (Produk)
+
+| Field         | Tipe Data          | Deskripsi                              |
+|---------------|--------------------|----------------------------------------|
+| id            | INT AUTO_INCREMENT | ID unik produk                         |
+| name          | VARCHAR(255)       | Nama produk                            |
+| description   | TEXT               | Deskripsi produk                       |
+| price         | DECIMAL(10,2)      | Harga produk                           |
+| stock         | INT                | Jumlah stok produk                     |
+| category_id   | INT                | FK ke categories.id                    |
+| image         | VARCHAR(255)       | Path gambar produk                     |
+| created_at    | TIMESTAMP          | Waktu produk ditambahkan               |
+| updated_at    | TIMESTAMP          | Waktu data diperbarui                  |
+
+---
+
+### C. Tabel Orders (Pesanan)
+
+| Field             | Tipe Data          | Deskripsi                              |
+|-------------------|--------------------|----------------------------------------|
+| id                | INT AUTO_INCREMENT | ID unik pesanan                        |
+| customer_id       | INT (FK ke users.id) | ID pembeli                             |
+| order_date        | TIMESTAMP          | Tanggal dan waktu pemesanan            |
+| status            | ENUM('pending','processed','shipped','completed','cancelled') | Status pemesanan |
+| total_price       | DECIMAL(10,2)      | Total harga seluruh item               |
+| shipping_address  | TEXT               | Alamat pengiriman                      |
+| created_at        | TIMESTAMP          | Waktu data dibuat                      |
+| updated_at        | TIMESTAMP          | Waktu data diperbarui                  |
+
+---
+
+### D. Tabel Order_Items (Detail Item Dalam Pesanan)
+
+| Field         | Tipe Data          | Deskripsi                              |
+|---------------|--------------------|----------------------------------------|
+| id            | INT AUTO_INCREMENT | ID unik item pesanan                   |
+| order_id      | INT (FK ke orders.id) | ID pesanan terkait                    |
+| product_id    | INT (FK ke products.id) | ID produk yang dipesan                |
+| quantity      | INT                | Jumlah item dipesan                    |
+| unit_price    | DECIMAL(10,2)      | Harga satuan saat pemesanan            |
+| subtotal      | DECIMAL(10,2)      | Total = quantity × unit_price          |
+
+---
+
+## Relasi Antar Tabel
+
+1. **users → orders**  
+   _One-to-Many._  
+   Seorang pembeli (role 'pembeli') dapat membuat banyak order.
+
+2. **orders → order_items**  
+   _One-to-Many._  
+   Setiap order memiliki banyak order_items.
+
+3. **products → order_items**  
+   _One-to-Many._  
+   Setiap produk bisa muncul di banyak order_items.
+
+4. **products → categories**  
+   _Many-to-One._  
+   Setiap produk memiliki satu kategori.
+
+5. **users → logs**  
+   _One-to-Many._  
+   Setiap user (admin, penjual, pembeli) dapat memiliki banyak log aktivitas.
+
+6. **orders → payments**  
+   _One-to-One._  
+   Setiap order memiliki satu pembayaran.
+
+---
+
