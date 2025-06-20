@@ -1,5 +1,5 @@
 @extends('layout.master')
-@section('abc')
+@section('abc') 
 <div class="blog_section layout_padding">
          <div class="container">
             <div class="row">
